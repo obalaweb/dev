@@ -21,4 +21,4 @@ jobs:
           username: ${{ secrets.USER }}
           password: ${{ secrets.PASS }}
           port: ${{ secrets.PORT }}
-          script: "cd /public_html && sh ./.scripts/deploy.sh"
+          script: "cd /domains/codprez.com/public_html/dev && sh ./.scripts/deploy.sh"
