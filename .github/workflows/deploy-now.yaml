@@ -1,0 +1,26 @@
+name: Laravel Deployment
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup FTP
+        uses: chetan/setup-ftp@v2
+        with:
+          ftp-username: ${{ secrets.FTP_USER }}
+          ftp-password: ${{ secrets.FTP_PASS }}
+          ftp-host: ${{ secrets.FTP_SERVER }}
+      - name: Deploy
+        run: |
+          ftp -n ${{ secrets.FTP_HOST }} << EOF
+            cd /var/www/html
+            delete *
+            lcd ./
+            mput ./*
+            EOF
