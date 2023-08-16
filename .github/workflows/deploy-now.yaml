@@ -1,26 +1,24 @@
-name: Laravel Deployment
+name: 🚀 Deploy on push master
 
-on:
+on: 
   push:
-    branches:
-      - master
-
+    branches:    
+      - master 
+    
 jobs:
-  deploy:
+  web-deploy:
+    name: 🎉 Deploy
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
-      - name: Setup FTP
-        uses: chetan/setup-ftp@v2
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v2
+
+      - name: 📂 Deploy to server via ssh
+        uses: appleboy/ssh-action@v0.1.7
         with:
-          ftp-username: ${{ secrets.FTP_USER }}
-          ftp-password: ${{ secrets.FTP_PASS }}
-          ftp-host: ${{ secrets.FTP_SERVER }}
-      - name: Deploy
-        run: |
-          ftp -n ${{ secrets.FTP_HOST }} << EOF
-            cd /var/www/html
-            delete *
-            lcd ./
-            mput ./*
-            EOF
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          password: ${{ secrets.PASS }}
+          port: ${{ secrets.PORT }}
+          script: "cd /public_html && sh ./.scripts/deploy.sh"
