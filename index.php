@@ -10,7 +10,7 @@
     <div class="text-center">
         <h1 class="text-4xl md:text-6xl font-bold mb-4">Page Coming Out Soon</h1>
         <p class="text-lg md:text-xl text-gray-600 mb-8">Stay tuned for exciting updates!</p>
-        <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md">Learn More</button>
+        <a class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md" href="https://codprez.com">Learn More</a>
     </div>
 </body>
 </html>
