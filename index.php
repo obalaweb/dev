@@ -1,1 +1,3 @@
-php_info();
+<?php
+  php_info();
+?>
