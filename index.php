@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coming Soon</title>
-  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
+    <title>Coming Soon</title>
 </head>
-<body>
-  <div class="text-center w-full">
-    <h1 class="text-4xl font-bold">Coming Soon</h1>
-    <p class="mt-4">We're working hard to get our website ready for launch.</p>
-    <p class="mt-4">In the meantime, you can sign up for our newsletter to be notified when we go live.</p>
-    <div class="mt-4">
-      <a href="https://example.com/newsletter" class="btn btn-primary">Sign up for the newsletter</a>
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+    <div class="text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4">Page Coming Out Soon</h1>
+        <p class="text-lg md:text-xl text-gray-600 mb-8">Stay tuned for exciting updates!</p>
+        <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md">Learn More</button>
     </div>
-  </div>
 </body>
 </html>
